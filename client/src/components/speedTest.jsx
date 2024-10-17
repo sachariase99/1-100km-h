@@ -53,17 +53,28 @@ function SpeedTestApp() {
   };
 
   return (
-    <div className='bg-black text-white h-screen relative'>
-      <h1 className='absolute top-10 left-1/2 -translate-x-1/2 text-3xl font-bold w-full text-center'>0-100 km/h Speed Test</h1>
-      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center'>
-      <p className='flex flex-col text-xl'>Current Speed: <span className='text-3xl font-bold mb-4'>{speed} km/h</span></p>
-      <p className='flex flex-col text-lg'>Timer: <span className='text-2xl font-bold -mt-2 mb-4'>{(timer / 1000).toFixed(2)} seconds</span></p>
-      {isFinished ? (
-        <p>Test Complete!</p>
-      ) : (
-        <p className='text-2xl mb-4'>{isStarted ? 'Testing...' : 'Waiting to start'}</p>
-      )}
-      <button onClick={resetTest} className='border px-4 py-2 rounded-xl'>Reset Test</button>
+    <div className="bg-black text-white h-screen relative">
+      <h1 className="absolute top-10 left-1/2 transform -translate-x-1/2 text-3xl font-bold w-full text-center">
+        0-100 km/h Speed Test
+      </h1>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+        <p className="flex flex-col text-xl">
+          Current Speed: <span className="text-3xl font-bold mb-4">{speed} km/h</span>
+        </p>
+        <p className="flex flex-col text-lg">
+          Timer: <span className="text-2xl font-bold -mt-2 mb-4">{(timer / 1000).toFixed(2)} seconds</span>
+        </p>
+        {isFinished ? (
+          <p className="text-2xl font-bold mb-4">Test Complete!</p>
+        ) : (
+          <p className="text-2xl mb-4">{isStarted ? 'Testing...' : 'Waiting to start'}</p>
+        )}
+        <button
+          onClick={resetTest}
+          className="border border-white px-4 py-2 rounded-xl hover:bg-white hover:text-black transition duration-300"
+        >
+          Reset Test
+        </button>
       </div>
     </div>
   );
